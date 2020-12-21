@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "644781812246",
+    "project_id": "ag-manual-34fdf",
+    "storage_bucket": "ag-manual-34fdf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644781812246:android:3fe42605f1e43db1c0a337",
+        "android_client_info": {
+          "package_name": "com.ag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644781812246-pbl0c3plsd2d7h2fdgj4n1a38gf4ntht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBysSAxEf97ptm80y9CXtM3aNLBd-8H1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "644781812246-pbl0c3plsd2d7h2fdgj4n1a38gf4ntht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
