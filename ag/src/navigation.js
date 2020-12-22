@@ -6,6 +6,7 @@ import Welcome from './Auth/Welcome';
 import Login from './Auth/Login';
 import SignUp from './Auth/SignUp';
 import Home from './Main/Home';
+import ForgotPassword from './Auth/ForgotPassword';
 
 const AuthStack = createStackNavigator();
 
@@ -36,6 +37,7 @@ export const AuthNavigation = () => {
       <AuthStack.Screen name="Welcome" component={Welcome} />
       <AuthStack.Screen name="Login" component={Login} />
       <AuthStack.Screen name="SignUp" component={SignUp} />
+      <AuthStack.Screen name="ForgotPassword" component={ForgotPassword} />
     </AuthStack.Navigator>
   );
 };

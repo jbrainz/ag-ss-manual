@@ -6,8 +6,18 @@ const spin = require('../../assets/img/loading.gif');
 
 const Spinner = () => {
   return (
-    <View justifyCointent="center" alignItems="center" flex={1}>
-      <Image source={spin} style={{height: 100, widht: 100}} />
+    <View
+      style={{
+        position: 'absolute',
+        flex: 1,
+        top: '40%',
+        left: '40%',
+        backgroundColor: 'transparent',
+      }}
+      justifyCointent="center"
+      alignItems="center"
+      flex={1}>
+      <Image source={spin} style={{height: 50, width: 50}} />
     </View>
   );
 };
