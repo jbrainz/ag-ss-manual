@@ -6,6 +6,7 @@ import {AuthContext} from './Auth/AuthProvider';
 import {StatusBar} from 'react-native';
 
 import {AuthNavigation, HomeNavigation} from './navigation';
+import Spinner from './Auth/components/Spinner';
 const Stack = createStackNavigator();
 
 const Routes = () => {
@@ -25,7 +26,9 @@ const Routes = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (initializing) return null;
+  if (initializing) {
+    return <Spinner />;
+  }
 
   return (
     <NavigationContainer>

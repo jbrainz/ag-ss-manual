@@ -18,8 +18,10 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string()
     .min(6, 'Password is too short')
     .max(50, 'Too Long!')
-    .required(''),
-  email: Yup.string().email('Please enter a valid email').required(''),
+    .required('This field is required'),
+  email: Yup.string()
+    .email('Please enter a valid email')
+    .required('This field is required'),
 });
 
 const styles = StyleSheet.create({
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
 });
 
 const Login = ({navigation}) => {
-  const {login} = useContext(AuthContext);
+  const {login, newErrors} = useContext(AuthContext);
   const {handleChange, handleBlur, handleSubmit, errors, touched} = useFormik({
     validationSchema: LoginSchema,
     initialValues: {email: '', password: ''},
@@ -86,7 +88,7 @@ const Login = ({navigation}) => {
   });
   const [eye, setEye] = useState(false);
   return (
-    <TouchableWithoutFeedback flex={1} onPress={() => Keyboard.dismiss()}>
+    <View flex={1}>
       <View flex={1} backgroundColor="#ffffff">
         <View style={styles.container}>
           <View style={styles.textContainer}>
@@ -149,6 +151,12 @@ const Login = ({navigation}) => {
                 {errors.password}
               </Text>
             )}
+            {newErrors && (
+              <Text style={{color: 'red', paddingLeft: 10, marginTop: 5}}>
+                {' '}
+                {newErrors}
+              </Text>
+            )}
             <BorderlessButton
               style={{
                 flexDirection: 'row',
@@ -167,12 +175,13 @@ const Login = ({navigation}) => {
               </Text>
             </BorderlessButton>
             <ButtonIcon
-              onPress={handleSubmit}
+              onPress={() => handleSubmit()}
               name="sign-in-alt"
               label="Sign In"
               style={{width: '100%', marginTop: -30}}
               color="#fff"
             />
+
             <View marginTop={10}>
               <BorderlessButton
                 rippleColor="transparent"
@@ -272,7 +281,7 @@ const Login = ({navigation}) => {
           </View>
         </View>
       </View>
-    </TouchableWithoutFeedback>
+    </View>
   );
 };
 

@@ -97,7 +97,7 @@ const SignUp = ({navigation}) => {
   const [eyeC, setEyeC] = useState(false);
 
   return (
-    <TouchableWithoutFeedback flex={1} onPress={() => Keyboard.dismiss()}>
+    <View flex={1} onPress={() => Keyboard.dismiss()}>
       <View flex={1} backgroundColor="#ffffff">
         <View style={styles.container}>
           <View style={styles.textContainer}>
@@ -296,7 +296,7 @@ const SignUp = ({navigation}) => {
           </View>
         </View>
       </View>
-    </TouchableWithoutFeedback>
+    </View>
   );
 };
 
