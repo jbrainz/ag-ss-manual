@@ -1,18 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useContext, useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Keyboard,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import {View, Text, StyleSheet, Alert, Keyboard} from 'react-native';
 import {BorderlessButton, TextInput} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import ButtonIcon from './components/ButtonIcon';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {AuthContext} from './AuthProvider';
+import Spinner from './components/Spinner';
 
 const LoginSchema = Yup.object().shape({
   password: Yup.string()
@@ -80,13 +75,25 @@ const styles = StyleSheet.create({
 });
 
 const Login = ({navigation}) => {
-  const {login, newErrors} = useContext(AuthContext);
+  const {login, newErrors, setEr} = useContext(AuthContext);
+  const [loading, setIsloading] = useState(false);
   const {handleChange, handleBlur, handleSubmit, errors, touched} = useFormik({
     validationSchema: LoginSchema,
     initialValues: {email: '', password: ''},
-    onSubmit: (value) => login(value.email, value.password),
+    onSubmit: (value) => {
+      Keyboard.dismiss();
+      setIsloading(true);
+      setTimeout(
+        () => {
+          login(value.email, value.password);
+        },
+        800,
+        () => console.log(newErrors),
+      );
+    },
   });
   const [eye, setEye] = useState(false);
+
   return (
     <View flex={1}>
       <View flex={1} backgroundColor="#ffffff">
@@ -102,7 +109,14 @@ const Login = ({navigation}) => {
             <TextInput
               placeholder="Please Enter Email"
               placeholderTextColor="#3E3E3E"
-              style={styles.textInput}
+              style={[
+                styles.textInput,
+                {
+                  borderColor:
+                    errors.email && touched.email ? 'red' : '#00A76E',
+                  borderWidth: 1,
+                },
+              ]}
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
               autoCompleteType="email"
@@ -119,11 +133,22 @@ const Login = ({navigation}) => {
               </Text>
             )}
             <Text style={[styles.label, {marginTop: 18}]}>Pasword</Text>
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
               <TextInput
                 placeholder="Please Enter Password"
                 placeholderTextColor="#3E3E3E"
-                style={styles.textInput}
+                style={[
+                  styles.textInput,
+                  {
+                    borderColor:
+                      errors.password && touched.password ? 'red' : '#00A76E',
+                    borderWidth: 1,
+                  },
+                ]}
                 secureTextEntry={eye ? false : true}
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
@@ -142,27 +167,27 @@ const Login = ({navigation}) => {
                 color={eye ? 'red' : '#444'}
               />
             </View>
-            {errors.password && touched.password && (
-              <Text
-                style={{
-                  paddingLeft: 10,
-                  color: 'red',
-                }}>
-                {errors.password}
-              </Text>
-            )}
-            {newErrors && (
-              <Text style={{color: 'red', paddingLeft: 10, marginTop: 5}}>
-                {' '}
-                {newErrors}
-              </Text>
-            )}
+            {newErrors !== ''
+              ? Alert.alert('Invalid Login', newErrors, [
+                  {
+                    text: 'OK',
+                    onPress: () => {
+                      setEr(false);
+                      setIsloading(false);
+                    },
+                  },
+                ])
+              : null}
             <BorderlessButton
+              onPress={() => navigation.navigate('ForgotPassword')}
+              rippleColor="transparent"
               style={{
-                flexDirection: 'row',
+                flexDirection: 'row-reverse',
                 justifyContent: 'flex-end',
                 marginTop: 30,
                 alignItems: 'center',
+                width: 100,
+                left: '55%',
               }}>
               <Text
                 style={{
@@ -181,7 +206,7 @@ const Login = ({navigation}) => {
               style={{width: '100%', marginTop: -30}}
               color="#fff"
             />
-
+            {loading && <Spinner />}
             <View marginTop={10}>
               <BorderlessButton
                 rippleColor="transparent"

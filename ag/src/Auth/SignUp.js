@@ -1,12 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useContext, useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Keyboard,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import {View, Text, StyleSheet, Keyboard, Alert} from 'react-native';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {BorderlessButton, TextInput} from 'react-native-gesture-handler';
@@ -57,7 +51,7 @@ const styles = StyleSheet.create({
     marginTop: 8.8,
   },
   textInputContainer: {
-    marginTop: 44.96,
+    marginTop: '5%',
     width: '80%',
     left: 35,
   },
@@ -82,7 +76,7 @@ const styles = StyleSheet.create({
 });
 
 const SignUp = ({navigation}) => {
-  const {register} = useContext(AuthContext);
+  const {register, newErrors, setEr} = useContext(AuthContext);
   const {handleChange, handleBlur, handleSubmit, touched, errors} = useFormik({
     validationSchema: SignUpSchema,
     initialValues: {
@@ -109,13 +103,19 @@ const SignUp = ({navigation}) => {
             <TextInput
               placeholder="Please Enter Email"
               placeholderTextColor="#3E3E3E"
-              style={styles.textInput}
+              style={[
+                styles.textInput,
+                {
+                  borderColor: errors.email && touched.email ? 'red' : '#fff',
+                  borderWidth: 1,
+                },
+              ]}
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
               autoCompleteType="email"
               autoCapitalize="none"
             />
-            {errors.email && touched.email && (
+            {/* {errors.email && touched.email && (
               <Text
                 style={{
                   paddingLeft: 10,
@@ -123,13 +123,20 @@ const SignUp = ({navigation}) => {
                 }}>
                 {errors.email}
               </Text>
-            )}
+            )} */}
             <Text style={[styles.label, {marginTop: 18}]}>Pasword</Text>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <TextInput
                 placeholder="Please Enter Password"
                 placeholderTextColor="#3E3E3E"
-                style={styles.textInput}
+                style={[
+                  styles.textInput,
+                  {
+                    borderColor:
+                      errors.password && touched.password ? 'red' : '#fff',
+                    borderWidth: 1,
+                  },
+                ]}
                 secureTextEntry={eye ? false : true}
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
@@ -150,21 +157,22 @@ const SignUp = ({navigation}) => {
                 color={eye ? 'red' : '#444'}
               />
             </View>
-            {errors.password && touched.password && (
-              <Text
-                style={{
-                  paddingLeft: 10,
-                  color: 'red',
-                }}>
-                {errors.password}
-              </Text>
-            )}
             <Text style={[styles.label, {marginTop: 18}]}>Comfirm pasword</Text>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <TextInput
                 placeholder="Comfirm Password"
                 placeholderTextColor="#3E3E3E"
-                style={styles.textInput}
+                style={[
+                  styles.textInput,
+                  {
+                    borderColor:
+                      errors.passwordComfirmation &&
+                      touched.passwordComfirmation
+                        ? 'red'
+                        : '#fff',
+                    borderWidth: 1,
+                  },
+                ]}
                 secureTextEntry={eyeC ? false : true}
                 onChangeText={handleChange('passwordComfirmation')}
                 onBlur={handleBlur('passwordComfirmation')}
@@ -185,15 +193,6 @@ const SignUp = ({navigation}) => {
                 color={eyeC ? 'red' : '#444'}
               />
             </View>
-            {errors.passwordComfirmation && touched.passwordComfirmation && (
-              <Text
-                style={{
-                  paddingLeft: 10,
-                  color: 'red',
-                }}>
-                {errors.passwordComfirmation}
-              </Text>
-            )}
             <ButtonIcon
               onPress={handleSubmit}
               name="sign-in-alt"
@@ -201,6 +200,11 @@ const SignUp = ({navigation}) => {
               style={{width: '100%', marginTop: -20}}
               color="#fff"
             />
+            {newErrors !== ''
+              ? Alert.alert('Email Already registered', newErrors, [
+                  {text: 'OK', onPress: () => setEr(false)},
+                ])
+              : null}
             <BorderlessButton
               rippleColor="transparent"
               onPress={() => navigation.navigate('Login')}

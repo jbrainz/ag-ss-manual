@@ -5926,15 +5926,14 @@ react-devtools-core@^4.6.0:
     shell-quote "^1.6.1"
     ws "^7"
 
-react-dom@16.13.1:
-  version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
-  integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
+react-dom@next:
+  version "0.0.0-8e5adfbd7"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-0.0.0-8e5adfbd7.tgz#be3b4f4e4b6a8b97c3f174d6a8eb5281eb604967"
+  integrity sha512-r9kyrDNJHXlPWDNm3/kFtIw5E6b/DlD33cbaJAbJESABHgzqOt2+tOzB4QUEcfX/EgQxP/xX2TnAD2u205s34g==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.19.1"
+    scheduler "0.0.0-8e5adfbd7"
 
 react-fast-compare@^2.0.1:
   version "2.0.4"
@@ -5950,6 +5949,11 @@ react-is@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+
+react-native-fbsdk@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-fbsdk/-/react-native-fbsdk-3.0.0.tgz#07ef41758bb17a0acaff744008af625a45ef9a01"
+  integrity sha512-i0JocuzLlGk13J0xFDjm8GlX7SADAL2kh/syE/HOn5HHdW+PFjC31MNj5AtzIw2TicHXpHGO6VPKNfdWFbxboA==
 
 react-native-gesture-handler@~1.7.0:
   version "1.7.0"
@@ -6403,6 +6407,14 @@ saxes@^5.0.0:
   integrity sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==
   dependencies:
     xmlchars "^2.2.0"
+
+scheduler@0.0.0-8e5adfbd7:
+  version "0.0.0-8e5adfbd7"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.0.0-8e5adfbd7.tgz#2ff67c3a13f6cd7336faf8832c4a1cce001e3108"
+  integrity sha512-Q5ipj3teMJXYf+8FTBWyVGSAnRyxXPlGQ5mpS+G56/aKdo9Ky9CM2/g1NCaYJGdnoUTjFpwG/Ws5gD5S7azK4Q==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 scheduler@0.19.1, scheduler@^0.19.1:
   version "0.19.1"
