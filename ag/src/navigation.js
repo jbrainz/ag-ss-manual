@@ -7,6 +7,7 @@ import Login from './Auth/Login';
 import SignUp from './Auth/SignUp';
 import Home from './Main/Home';
 import ForgotPassword from './Auth/ForgotPassword';
+import Reset from './Auth/Reset';
 
 const AuthStack = createStackNavigator();
 
@@ -38,6 +39,7 @@ export const AuthNavigation = () => {
       <AuthStack.Screen name="Login" component={Login} />
       <AuthStack.Screen name="SignUp" component={SignUp} />
       <AuthStack.Screen name="ForgotPassword" component={ForgotPassword} />
+      <AuthStack.Screen name="Reset" component={Reset} />
     </AuthStack.Navigator>
   );
 };

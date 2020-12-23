@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
 });
 
 const ForgotPassword = ({navigation}) => {
-  const {forgotPassword, newErrors, setEr} = useContext(AuthContext);
+  const {forgotPassword, newErrors, setEr, er} = useContext(AuthContext);
   const [loading, setIsloading] = useState(false);
   const {handleChange, handleBlur, handleSubmit, errors, touched} = useFormik({
     validationSchema: ForgotPasswordScehma,
@@ -81,13 +81,8 @@ const ForgotPassword = ({navigation}) => {
     onSubmit: (value) => {
       Keyboard.dismiss();
       setIsloading(true);
-      setTimeout(
-        () => {
-          forgotPassword(value.email);
-        },
-        800,
-        () => console.log(newErrors),
-      );
+      forgotPassword(value.email);
+      setIsloading(false);
     },
   });
 
@@ -140,7 +135,10 @@ const ForgotPassword = ({navigation}) => {
               ])
             : null}
           <ButtonIcon
-            onPress={() => handleSubmit()}
+            onPress={() => {
+              handleSubmit();
+              navigation.navigate('Reset');
+            }}
             name="redo"
             label="Reset"
             style={{width: '100%'}}
