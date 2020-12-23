@@ -282,7 +282,10 @@ const Login = ({navigation}) => {
               justifyContent: 'space-evenly',
             }}>
             <ButtonIcon
-              onPress={() => _signIn()}
+              onPress={() => {
+                _signIn();
+                setIsloading(true);
+              }}
               name="google"
               color="#00A76E"
               textStyle={{color: '#444', marginLeft: 10}}

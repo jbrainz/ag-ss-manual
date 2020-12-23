@@ -27,6 +27,7 @@ export const AuthProvider = ({children}) => {
         newErrors,
         setEr,
         er,
+        loggedIn,
         login: async (email, password) => {
           try {
             await auth().signInWithEmailAndPassword(email, password);
@@ -79,7 +80,18 @@ export const AuthProvider = ({children}) => {
             await auth().signOut();
             setErrors('');
           } catch (e) {
-            setErrors(e);
+            setErrors(e.code);
+          }
+        },
+        googleOut: async () => {
+          try {
+            await GoogleSignin.revokeAccess();
+            await GoogleSignin.signOut();
+            setloggedIn(false);
+            setUser(null);
+            setErrors('');
+          } catch (e) {
+            setErrors(e.code);
           }
         },
         forgotPassword: async (email) => {
@@ -107,6 +119,7 @@ export const AuthProvider = ({children}) => {
           try {
             await GoogleSignin.hasPlayServices();
             const {accessToken, idToken} = await GoogleSignin.signIn();
+            setUser(idToken);
             setloggedIn(true);
           } catch (err) {
             if (err.code === statusCodes.SIGN_IN_CANCELLED) {

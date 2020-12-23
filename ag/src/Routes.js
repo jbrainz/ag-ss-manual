@@ -4,13 +4,12 @@ import {createStackNavigator} from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
 import {AuthContext} from './Auth/AuthProvider';
 import {StatusBar} from 'react-native';
-
 import {AuthNavigation, HomeNavigation} from './navigation';
 import Spinner from './Auth/components/Spinner';
 const Stack = createStackNavigator();
 
 const Routes = () => {
-  const {user, setUser} = useContext(AuthContext);
+  const {user, setUser, loggedIn} = useContext(AuthContext);
   const [initializing, setInitializing] = useState(true);
 
   const onAuthStateChanged = (users) => {
@@ -32,7 +31,7 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor="#fff" barStyle="dark-content" />
-      {user ? (
+      {user || loggedIn ? (
         <Stack.Navigator headerMode="none">
           <Stack.Screen name="HomeNavigation" component={HomeNavigation} />
         </Stack.Navigator>
