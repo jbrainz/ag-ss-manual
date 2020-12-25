@@ -12,12 +12,13 @@ import {AuthContext} from '../Auth/AuthProvider';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import Lessons from './components/Lessons';
-import {BorderlessButton, RectButton} from 'react-native-gesture-handler';
+import {RectButton} from 'react-native-gesture-handler';
 
 const background = require('../assets/img/sec.png');
 const {height, width} = Dimensions.get('window');
 
 const wHeight = height * 0.2;
+import {data} from '../data';
 
 const styles = StyleSheet.create({
   container: {
@@ -41,6 +42,7 @@ const styles = StyleSheet.create({
 });
 
 const Home = ({navigation}) => {
+  console.log(data.Unit1.val.Lesson1.Date);
   const {logout, googleOut} = useContext(AuthContext);
   return (
     <View flex={1} justifyContent="center" alignItems="center">
@@ -49,7 +51,6 @@ const Home = ({navigation}) => {
           top: 0,
           position: 'absolute',
           left: 0,
-          backgroundColor: 'red',
           borderTopLeftRadius: 40,
         }}>
         <View style={styles.container}>

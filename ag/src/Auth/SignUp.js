@@ -89,7 +89,7 @@ const SignUp = ({navigation}) => {
     },
     onSubmit: (value) => {
       setIsloading(true);
-      value.preventDefault();
+
       register(value.email, value.password);
     },
   });
@@ -226,7 +226,13 @@ const SignUp = ({navigation}) => {
             />
             {newErrors !== ''
               ? Alert.alert('Email Already registered', newErrors, [
-                  {text: 'OK', onPress: () => setEr(false)},
+                  {
+                    text: 'OK',
+                    onPress: () => {
+                      setEr(false);
+                      setIsloading(false);
+                    },
+                  },
                 ])
               : null}
             {loading && <Spinner />}

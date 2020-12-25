@@ -5,7 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {StatusBar} from 'react-native';
 import {Constants, Asset} from 'react-native-unimodules';
 
-const NAVIGATION_STATE_KEY = `NAVIGATION_STATE_KEY-${Constants.sdkVersion}`;
+const NAVIGATION_STATE_KEY = `NAVIGATION_STATE_KEY-${Constants.manifest}`;
 
 const usePromiseAll = (promises, cb) =>
   useEffect(() => {
