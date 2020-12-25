@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
 });
 
 const Login = ({navigation}) => {
-  const {login, newErrors, setEr} = useContext(AuthContext);
+  const {login, newErrors, setEr, _signIn} = useContext(AuthContext);
   const [loading, setIsloading] = useState(false);
   const {handleChange, handleBlur, handleSubmit, errors, touched} = useFormik({
     validationSchema: LoginSchema,
@@ -282,6 +282,10 @@ const Login = ({navigation}) => {
               justifyContent: 'space-evenly',
             }}>
             <ButtonIcon
+              onPress={() => {
+                _signIn();
+                setIsloading(true);
+              }}
               name="google"
               color="#00A76E"
               textStyle={{color: '#444', marginLeft: 10}}

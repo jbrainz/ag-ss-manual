@@ -1,11 +1,14 @@
 import React from 'react';
 import {AuthProvider} from './Auth/AuthProvider';
-import Routes from './Routes';
+import LoadAssets from './components/LoadAssets';
+import Routes from './components/Routes';
 
 const Providers = () => {
   return (
     <AuthProvider>
-      <Routes />
+      <LoadAssets>
+        <Routes />
+      </LoadAssets>
     </AuthProvider>
   );
 };

@@ -7,6 +7,7 @@ import {BorderlessButton, TextInput} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import ButtonIcon from './components/ButtonIcon';
 import {AuthContext} from './AuthProvider';
+import Spinner from './components/Spinner';
 
 const SignUpSchema = Yup.object().shape({
   password: Yup.string()
@@ -76,7 +77,8 @@ const styles = StyleSheet.create({
 });
 
 const SignUp = ({navigation}) => {
-  const {register, newErrors, setEr} = useContext(AuthContext);
+  const {register, newErrors, setEr, _signIn} = useContext(AuthContext);
+  const [loading, setIsloading] = useState(false);
   const {handleChange, handleBlur, handleSubmit, touched, errors} = useFormik({
     validationSchema: SignUpSchema,
     initialValues: {
@@ -85,7 +87,11 @@ const SignUp = ({navigation}) => {
       passwordComfirmation: '',
       remember: true,
     },
-    onSubmit: (value) => register(value.email, value.password),
+    onSubmit: (value) => {
+      setIsloading(true);
+
+      register(value.email, value.password);
+    },
   });
   const [eye, setEye] = useState(false);
   const [eyeC, setEyeC] = useState(false);
@@ -115,7 +121,7 @@ const SignUp = ({navigation}) => {
               autoCompleteType="email"
               autoCapitalize="none"
             />
-            {/* {errors.email && touched.email && (
+            {errors.email && touched.email && (
               <Text
                 style={{
                   paddingLeft: 10,
@@ -123,7 +129,7 @@ const SignUp = ({navigation}) => {
                 }}>
                 {errors.email}
               </Text>
-            )} */}
+            )}
             <Text style={[styles.label, {marginTop: 18}]}>Pasword</Text>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <TextInput
@@ -157,6 +163,15 @@ const SignUp = ({navigation}) => {
                 color={eye ? 'red' : '#444'}
               />
             </View>
+            {errors.password && touched.password && (
+              <Text
+                style={{
+                  paddingLeft: 10,
+                  color: 'red',
+                }}>
+                {errors.password}
+              </Text>
+            )}
             <Text style={[styles.label, {marginTop: 18}]}>Comfirm pasword</Text>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <TextInput
@@ -193,6 +208,15 @@ const SignUp = ({navigation}) => {
                 color={eyeC ? 'red' : '#444'}
               />
             </View>
+            {errors.password && touched.password && (
+              <Text
+                style={{
+                  paddingLeft: 10,
+                  color: 'red',
+                }}>
+                {errors.password}
+              </Text>
+            )}
             <ButtonIcon
               onPress={handleSubmit}
               name="sign-in-alt"
@@ -202,9 +226,16 @@ const SignUp = ({navigation}) => {
             />
             {newErrors !== ''
               ? Alert.alert('Email Already registered', newErrors, [
-                  {text: 'OK', onPress: () => setEr(false)},
+                  {
+                    text: 'OK',
+                    onPress: () => {
+                      setEr(false);
+                      setIsloading(false);
+                    },
+                  },
                 ])
               : null}
+            {loading && <Spinner />}
             <BorderlessButton
               rippleColor="transparent"
               onPress={() => navigation.navigate('Login')}
@@ -276,6 +307,10 @@ const SignUp = ({navigation}) => {
               justifyContent: 'space-evenly',
             }}>
             <ButtonIcon
+              onPress={() => {
+                _signIn();
+                setIsloading(true);
+              }}
               name="google"
               color="#00A76E"
               textStyle={{color: '#444', marginLeft: 10}}
