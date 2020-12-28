@@ -71,6 +71,13 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>Conti-sans.otf</string>
+		<string>ContiSans-Bold.otf</string>
+		<string>ContiSans-Light.otf</string>
+		<string>OpenSans-Bold.ttf</string>
+		<string>OpenSans-Regular.ttf</string>
+		<string>OpenSans-Semibold.ttf</string>
+		<string>Retroica.ttf</string>
 	</array>
 </dict>
 </plist>

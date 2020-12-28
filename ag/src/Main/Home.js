@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
 });
 
 const Home = ({navigation}) => {
-  console.log(data.Unit1.val.Lesson1.Date);
   const {logout, googleOut} = useContext(AuthContext);
   return (
     <View flex={1} justifyContent="center" alignItems="center">
@@ -113,9 +112,16 @@ const Home = ({navigation}) => {
             </View>
           </View>
         </View>
-        <Lessons />
+        <Lessons
+          date={data.Unit1.Lesson1.Date}
+          topic={data.Unit1.Lesson1.Topic}
+          memVerse={data.Unit1.Lesson1.Mv}
+          verse={data.Unit1.Lesson1.Verse}
+          centralTruth={data.Unit1.Lesson1.centralTruth}
+          outline={data.Unit1.Lesson1.LessonOutline}
+        />
       </View>
-      <RectButton
+      {/* <RectButton
         height={40}
         width={'60%'}
         backgroundColor="green"
@@ -125,7 +131,7 @@ const Home = ({navigation}) => {
           googleOut();
         }}>
         <Text color="white">Welcome</Text>
-      </RectButton>
+      </RectButton> */}
     </View>
   );
 };
