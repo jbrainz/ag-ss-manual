@@ -15,25 +15,23 @@ const styles = StyleSheet.create({
   container: {
     width: '90%',
     backgroundColor: '#fff',
-    top: 30,
     left: '5%',
-
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     elevation: 2,
     overflow: 'hidden',
     bottom: '10%',
-    height: wHeight,
+    marginTop: height / 4,
+    top: '-10%',
   },
   row: {
-    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
     width: '100%',
     backgroundColor: '#1982c4',
     borderTopLeftRadius: 5,
     borderBottomRightRadius: 75,
     borderTopRightRadius: 5,
+    justifyContent: 'center',
   },
   text: {
     color: '#fff',
@@ -62,26 +60,23 @@ const Lessons = ({
   lesson,
   verse,
   outline,
+  number,
 }) => {
   const [read, setRead] = useState(false);
-  const [icon, setIcon] = useState(false);
 
   const NewView = read ? ScrollView : View;
   const insets = useSafeAreaInsets();
   return (
-    <View
-      showsVerticalScrollIndicator={false}
-      style={[styles.container, {height: read ? nHeight : wHeight}]}>
+    <View style={[styles.container, {height: read ? nHeight : wHeight}]}>
       <View style={[styles.row, {height: read ? '20%' : '30%'}]}>
-        <Text style={styles.text}>
-          <Text> {topic}</Text>
+        <Text
+          style={[
+            styles.text,
+            {textAlign: 'left', padding: 5, fontSize: 15, color: '#ffb703'},
+          ]}>
+          {number}.
         </Text>
-        <Icon
-          name="heart"
-          onPress={() => setIcon((prev) => !prev)}
-          color={icon ? 'red' : '#fff'}
-          size={16}
-        />
+        <Text style={styles.text}> {topic}</Text>
       </View>
       <View backgroundColor="#1982c4">
         <View
@@ -129,11 +124,11 @@ const Lessons = ({
                 {verse} (KJV)
               </Text>
             </Text>
-            <View style={{height: read ? '70%' : undefined}}>
+            <View style={{height: read ? '60%' : undefined}}>
               <ScrollView showsVerticalScrollIndicator={false}>
                 <View
                   backgroundColor="#dee2e6"
-                  marginTop="10%"
+                  marginTop="5%"
                   style={{
                     borderRadius: 10,
                     padding: 10,
@@ -151,7 +146,6 @@ const Lessons = ({
                     Central Truth:
                   </Text>
                   <View
-                    marginBottom={5}
                     backgroundColor="#b8bedd"
                     height={1}
                     width="40%"
@@ -190,7 +184,8 @@ const Lessons = ({
                   <View
                     style={{
                       borderRadius: 10,
-                      padding: 10,
+                      paddingLeft: 10,
+                      paddingRight: 10,
                     }}>
                     <Text
                       style={{
@@ -214,7 +209,7 @@ const Lessons = ({
                         color: '#2C2C2C',
                         opacity: 0.9,
                         fontSize: 14,
-                        fontFamily: 'ContiSans',
+                        fontFamily: 'Conti-sans',
                         textAlign: 'left',
                         fontWeight: 'normal',
                         lineHeight: 18,
@@ -223,42 +218,40 @@ const Lessons = ({
                     </Text>
                   </View>
                 ) : null}
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    paddingLeft: '5%',
-                    paddingRight: '5%',
-                    alignItems: 'center',
-                    marginBottom: 5,
-                  }}>
-                  <Text style={[styles.subText, {fontWeight: 'normal'}]}>
-                    {date}
-                  </Text>
-                  <Text
-                    style={[
-                      styles.subText,
-                      {
-                        fontWeight: 'bold',
-                        color: '#1982c4',
-                        textTransform: 'uppercase',
-                      },
-                    ]}>
-                    {lesson}
-                  </Text>
-                  <BorderlessButton
-                    onPress={() => setRead((prev) => !prev)}
-                    rippleColor="transparent">
-                    <Text
-                      style={[
-                        styles.subText,
-                        {textDecorationLine: 'underline'},
-                      ]}>
-                      {read ? 'Close' : 'Read more'}
-                    </Text>
-                  </BorderlessButton>
-                </View>
               </ScrollView>
+            </View>
+            <View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  paddingLeft: '5%',
+                  paddingRight: '5%',
+                  alignItems: 'flex-end',
+                }}>
+                <Text style={[styles.subText, {fontWeight: 'normal'}]}>
+                  {date}
+                </Text>
+                <Text
+                  style={[
+                    styles.subText,
+                    {
+                      fontWeight: 'bold',
+                      color: '#1982c4',
+                      textTransform: 'uppercase',
+                    },
+                  ]}>
+                  {lesson}
+                </Text>
+                <BorderlessButton
+                  onPress={() => setRead((prev) => !prev)}
+                  rippleColor="transparent">
+                  <Text
+                    style={[styles.subText, {textDecorationLine: 'underline'}]}>
+                    {read ? 'Close' : 'Read more'}
+                  </Text>
+                </BorderlessButton>
+              </View>
             </View>
           </View>
         </View>

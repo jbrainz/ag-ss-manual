@@ -57,7 +57,7 @@ const LoadAssets = ({assets, fonts, children}) => {
   }
   return (
     <NavigationContainer {...{onStateChange, initialState}}>
-      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+      <StatusBar barStyle="light-content" backgroundColor="#1982c4" />
       {children}
     </NavigationContainer>
   );

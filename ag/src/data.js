@@ -1,14 +1,14 @@
-export const data = {
-  Unit1: {
-    Title: 'Abraham Isaac and Jacob',
-    Lesson1: {
-      Date: 'January 3, 2021',
-      Topic: 'ABRAHAM: GENEROUS AND STRONG',
-      Mv: 'They then which be of faith are blessed with faithful Abraham',
-      Verse: 'Gal 3:9',
-      centralTruth:
-        'Generousity is an essential characteristic of godly living',
-      LessonOutline: `
+export const data = [
+  {
+    key: '1',
+    lesson: 'Lesson 1',
+    unit: 'Abraham Isaac and Jacob',
+    date: 'January 3, 2021',
+    topic: 'ABRAHAM: GENEROUS AND STRONG',
+    mv: 'They then which be of faith are blessed with faithful Abraham',
+    verse: 'Gal 3:9',
+    centralTruth: 'Generousity is an essential characteristic of godly living',
+    lessonOutline: `
       1. Unselfish Act of Deference Gen. 13:14-18 
         A. Prosperity and Strife 
         B. Unselfish Peacemaking. 
@@ -18,14 +18,17 @@ export const data = {
       3. Rescue and Blessing Gen. 14:8-24
         A. Strength in Trusting God
         B. God-Given Victory`,
-    },
-    Lesson2: {
-      Date: 'January 10, 2021',
-      Topic: 'ABRAHAM, THE INTERCESSOR',
-      Mv: 'Bretheren, pray for us.',
-      Verse: 'Thes. 5:25',
-      centralTruth: 'God calls Christians to intercede for others.',
-      LessonOutline: `
+  },
+  {
+    key: '2',
+    lesson: 'Lesson 2',
+    unit: 'Abraham Isaac and Jacob',
+    date: 'January 10, 2021',
+    topic: 'ABRAHAM, THE INTERCESSOR',
+    mv: 'Bretheren, pray for us.',
+    verse: 'Thes. 5:25',
+    centralTruth: 'God calls Christians to intercede for others.',
+    lessonOutline: `
         1. Intence Intercession Gen. 18:16-33
           A. God Speaks to Abraham
           B. Abraham Speaks to God    
@@ -35,15 +38,18 @@ export const data = {
         3. Severity of God's Judgement Gen 19:15-17, 24-29; 2Peter 2:6-8
           A. Divinely Ordered Destruction
           B. Warning to the Ungodly`,
-    },
-    Lesson3: {
-      Date: 'January 17, 2021',
-      Topic: "ABRAHAM'S, GREAT TEST",
-      Mv:
-        'Abraham believed God, and it was imputed unto him for righteousness: and he was called the Friend of God.',
-      Verse: 'Jam 2:23',
-      centralTruth: 'Obedience to God demands great faith.',
-      LessonOutline: `
+  },
+  {
+    key: '3',
+    lesson: 'Lesson 3',
+    unit: 'Abraham Isaac and Jacob',
+    date: 'January 17, 2021',
+    topic: "ABRAHAM'S, GREAT TEST",
+    mv:
+      'Abraham believed God, and it was imputed unto him for righteousness: and he was called the Friend of God.',
+    verse: 'Jam 2:23',
+    centralTruth: 'Obedience to God demands great faith.',
+    lessonOutline: `
         1. Isaac Miraculous Birth Gen 17:15-17; 21:1-8.
           A. New name; New Reality
           B. The Promised Son Born
@@ -54,15 +60,18 @@ export const data = {
           A. Abraham Blessed By God',
           B. Abraham's Faith Celebrated
       `,
-    },
-    Lesson4: {
-      Date: 'January 24, 2021',
-      Topic: 'ISAAC, THE PROSPEROUS PEACEMAKER',
-      Mv:
-        'Blessed are the peacemakers, for they shall be called th childeren of God.',
-      Verse: 'Matt 5:9',
-      centralTruth: "Christ's followers are to be peacemakers.",
-      LessonOutline: `
+  },
+  {
+    key: '4',
+    lesson: 'Lesson 4',
+    unit: 'Abraham Isaac and Jacob',
+    date: 'January 24, 2021',
+    topic: 'ISAAC, THE PROSPEROUS PEACEMAKER',
+    mv:
+      'Blessed are the peacemakers, for they shall be called th childeren of God.',
+    verse: 'Matt 5:9',
+    centralTruth: "Christ's followers are to be peacemakers.",
+    lessonOutline: `
         
           1. Isaac Deceives Abimelech Gen. 26:1-11.
             A. Isaac Stays in Canaan
@@ -73,15 +82,18 @@ export const data = {
           3. Isaac Makes Peace Gen. 26:17-18; Rom. 12:17-18.
             A. Making Peace
             B. Living Peaceably`,
-    },
-    Lesson5: {
-      Date: 'January 31, 2021',
-      Topic: 'JACOB, THE SUPLANTER',
-      Mv:
-        'Be ye all of one mind, having compassion one of another, love as bretheren, be pitiful, be courteous.',
-      Verse: '1  Pet 3:8',
-      centralTruth: 'The Christian home should be a refuge of peace and unity.',
-      LessonOutline: `
+  },
+  {
+    key: '5',
+    lesson: 'Lesson 5',
+    unit: 'Abraham Isaac and Jacob',
+    date: 'January 31, 2021',
+    topic: 'JACOB, THE SUPLANTER',
+    mv:
+      'Be ye all of one mind, having compassion one of another, love as bretheren, be pitiful, be courteous.',
+    verse: '1  Pet 3:8',
+    centralTruth: 'The Christian home should be a refuge of peace and unity.',
+    lessonOutline: `
           1. Brohters Born as Rivals Gen. 25:19-26
             A. Isaac's Prayers Answered
             B. Twin Brothers Born
@@ -91,20 +103,20 @@ export const data = {
           3. Jacob Steals Esau's Blessing Gen. 27:14-40.
             A. Jacob's Deception
             B. Esau's Despair
-        ],
       `,
-    },
   },
-  Unit2: {
-    Title: 'Strengthening marriage and family Ties',
-    Lesson6: {
-      Date: 'Febuary 7, 2021',
-      Topic: 'Biblical View of Marriage',
-      Mv:
-        'Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.',
-      Verse: 'Gen. 2:24',
-      centralTruth: "The Bible reveals God's plan for marriage",
-      LessonOutline: `
+
+  {
+    key: '6',
+    lesson: 'Lesson 6',
+    unit: 'Strengthening marriage and family Ties',
+    date: 'Febuary 7, 2021',
+    topic: 'Biblical View of Marriage',
+    mv:
+      'Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.',
+    verse: 'Gen. 2:24',
+    centralTruth: "The Bible reveals God's plan for marriage",
+    lessonOutline: `
         1. Purpose of Marriage Gen. 2:18-24.
           A. Something Is Miissing.
           B. Here Comes the Bride.
@@ -115,16 +127,19 @@ export const data = {
           A. Hard Hearts Miss the Truth
           B. A Practical Approach
       `,
-    },
-    Lesson7: {
-      Date: 'Febuary 14, 2021',
-      Topic: 'Husband-Wife relationship',
-      Mv:
-        "nevertheless let every one of you in particular so love his wife even as himself' and the wife see that she reverence her husband.",
-      Verse: 'Eph. 5:33',
-      centralTruth:
-        'Mutual love and respect are essential for fulfilment in marriage.',
-      LessonOutline: `
+  },
+  {
+    key: '7',
+    lesson: 'Lesson 7',
+    unit: 'Strengthening marriage and family Ties',
+    date: 'Febuary 14, 2021',
+    topic: 'Husband-Wife relationship',
+    mv:
+      "nevertheless let every one of you in particular so love his wife even as himself' and the wife see that she reverence her husband.",
+    verse: 'Eph. 5:33',
+    centralTruth:
+      'Mutual love and respect are essential for fulfilment in marriage.',
+    lessonOutline: `
         1. Show Loving Consideration ICorth 7:1-5
           A. Safegaurd against immorality
           B. Practical Love
@@ -135,16 +150,19 @@ export const data = {
           A. Love Makes it Easier
           B. Advantages of mutual consideration
       `,
-    },
-    Lesson8: {
-      Date: 'Febuary 21, 2021',
-      Topic: 'parental responsibilities',
-      Mv:
-        'Ye fathers, provoke not your childeren to wrath: but bring them up in the nature and admonition of the lord',
-      Verse: 'Eph. 6:4',
-      centralTruth:
-        'God directs parents to rear their childeren according to scriptural principles.',
-      LessonOutline: `
+  },
+  {
+    key: '8',
+    lesson: 'Lesson 8',
+    unit: 'Strengthening marriage and family Ties',
+    date: 'Febuary 21, 2021',
+    topic: 'parental responsibilities',
+    mv:
+      'Ye fathers, provoke not your childeren to wrath: but bring them up in the nature and admonition of the lord',
+    verse: 'Eph. 6:4',
+    centralTruth:
+      'God directs parents to rear their childeren according to scriptural principles.',
+    lessonOutline: `
         1. Teach God's Word. Deut. 6:1-9
           A. Obey God's commands
           B. Teach your children daily
@@ -155,16 +173,19 @@ export const data = {
           A. Love Rejected
           B. Love Forgives and Restores
       `,
-    },
-    Lesson9: {
-      Date: 'Febuary 28, 2021',
-      Topic: 'improving intergenerational relationship',
-      Mv:
-        'Be kindly affectioned one to another with brotherly love; in honour preferring one another.',
-      Verse: 'Rom. 12:10',
-      centralTruth:
-        'Respect and care for one another are vital in family relationship.',
-      LessonOutline: `
+  },
+  {
+    key: '9',
+    lesson: 'Lesson 9',
+    unit: 'Strengthening marriage and family Ties',
+    date: 'Febuary 28, 2021',
+    topic: 'improving intergenerational relationship',
+    mv:
+      'Be kindly affectioned one to another with brotherly love; in honour preferring one another.',
+    verse: 'Rom. 12:10',
+    centralTruth:
+      'Respect and care for one another are vital in family relationship.',
+    lessonOutline: `
         1. Strengthen Family ties Luke 2:40-52.
           A. Lasting Relationships Begins Early
           B. Letting Childeren Grow up
@@ -175,16 +196,19 @@ export const data = {
           A. Do not forget older family members.
           B. Provide for the elderly.
       `,
-    },
-    Lesson10: {
-      Date: 'March 7, 2021',
-      Topic: 'dealing with family stress',
-      Mv:
-        'Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.',
-      Verse: 'Isa 26:3',
-      centralTruth:
-        'Believers can rely on God to help them cope with stressfu; situations.',
-      LessonOutline: `
+  },
+  {
+    key: '10',
+    lesson: 'Lesson 10',
+    unit: 'Strengthening marriage and family Ties',
+    date: 'March 7, 2021',
+    topic: 'dealing with family stress',
+    mv:
+      'Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.',
+    verse: 'Isa 26:3',
+    centralTruth:
+      'Believers can rely on God to help them cope with stressfu; situations.',
+    lessonOutline: `
         1. Coping with peer pressures IICorth. 6:14-18.
           A. Devastating force.
           B. antidotes.
@@ -195,15 +219,18 @@ export const data = {
           A. Safeguards Against stress.
           B. God provides help.
       `,
-    },
-    Lesson11: {
-      Date: 'March 14, 2021',
-      Topic: 'jacob meets God at bethel',
-      Mv:
-        'Which convenant he [God] made with Abraham... and confirmed the same unto Jacob.',
-      Verse: 'Isa 105:9-10',
-      centralTruth: 'Christians should practice listening to Gods voice.',
-      LessonOutline: ` 
+  },
+  {
+    key: '11',
+    lesson: 'Lesson 11',
+    unit: 'Strengthening marriage and family Ties',
+    date: 'March 14, 2021',
+    topic: 'jacob meets God at bethel',
+    mv:
+      'Which convenant he [God] made with Abraham... and confirmed the same unto Jacob.',
+    verse: 'Isa 105:9-10',
+    centralTruth: 'Christians should practice listening to Gods voice.',
+    lessonOutline: ` 
         1. Jacob Flees from canaan Gen. 27:41 through 28:9.
           A. Jacob Hated and exiled.
           B. Esau's Conciet
@@ -214,16 +241,19 @@ export const data = {
           A. Jacob's worship of God
           B. Jacob's commitment to God
       `,
-    },
-    Lesson12: {
-      Date: 'March 21, 2021',
-      Topic: "jacob's reunion with esau",
-      Mv:
-        'Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept.',
-      Verse: 'Gen 33:4',
-      centralTruth:
-        "Giving and recieving forgiveness should characterise a christian's life.",
-      LessonOutline: `
+  },
+  {
+    key: '12',
+    lesson: 'Lesson 12',
+    unit: 'Strengthening marriage and family Ties',
+    date: 'March 21, 2021',
+    topic: "jacob's reunion with esau",
+    mv:
+      'Esau ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept.',
+    verse: 'Gen 33:4',
+    centralTruth:
+      "Giving and recieving forgiveness should characterise a christian's life.",
+    lessonOutline: `
         1. Jacob prepares to meet esau gen. 32:1-21.
           A. Seeking Grace From Esau.
           B. Praying to Survive.
@@ -234,19 +264,18 @@ export const data = {
           A. Reunion of esau and jacob.
           B. the brothers part in peace.
       `,
-    },
   },
-  Unit3: {
-    Title: 'Pastoral letters: I AND II Timothy and Titus',
-    Lesson13: {
-      Date: 'March 28, 2021',
-      Topic: 'Instruction for christian living',
-      Mv:
-        'Fight the good fight of faith, lay hold on eternal life, whereunto thou art also called, and hast professed a good profession before many witnesses',
-      Verse: 'I Tim 6: 12',
-      centralTruth:
-        'TThe bible is our guide fir all aspects of christian living',
-      LessonOutline: `
+  {
+    key: '13',
+    lesson: 'Lesson 13',
+    unit: 'Pastoral letters: I AND II Timothy and Titus',
+    date: 'March 28, 2021',
+    topic: 'Instruction for christian living',
+    mv:
+      'Fight the good fight of faith, lay hold on eternal life, whereunto thou art also called, and hast professed a good profession before many witnesses',
+    verse: 'I Tim 6: 12',
+    centralTruth: 'TThe bible is our guide fir all aspects of christian living',
+    lessonOutline: `
         1. Hold firm the right doctrine ITim. 1: 1-7, 18-20.
           A. Live by sound doctrine.
           B. Keep the faith.
@@ -257,15 +286,18 @@ export const data = {
           A. Be content in christ.
           B. seek after that which is good.
       `,
-    },
-    Lesson14: {
-      Date: 'april 4, 2021',
-      Topic: 'death destroyed (EASTER)',
-      Mv:
-        'Now is christ risen from the dead, and become the firstfruits of them that slept.',
-      Verse: 'ICor. 15:20',
-      centralTruth: "Christ's resurrection gaurantees victory over death",
-      LessonOutline: `
+  },
+  {
+    key: '14',
+    lesson: 'Lesson 14',
+    unit: 'Pastoral letters: I AND II Timothy and Titus',
+    date: 'april 4, 2021',
+    topic: 'death destroyed (EASTER)',
+    mv:
+      'Now is christ risen from the dead, and become the firstfruits of them that slept.',
+    verse: 'ICor. 15:20',
+    centralTruth: "Christ's resurrection gaurantees victory over death",
+    lessonOutline: `
         1. Christ's Victory Over Death ICor. 15:20-26
           A. Christ Rose From the Grave.
           B. Christ Reigns.
@@ -276,16 +308,19 @@ export const data = {
           A. From mortality to immortality.
           B. Victorious over death.
       `,
-    },
-    Lesson15: {
-      Date: 'April 11, 2021',
-      Topic: 'instruction for christian ministry',
-      Mv:
-        'Take heed unto thyself, and unto the doctrine; continue in them: for in doing this thou shalt both save thyself, and them that hear thee',
-      Verse: 'ITim. 4:16',
-      centralTruth:
-        'All Christians are called by God to Christlike, spirit-empowered ministry.',
-      LessonOutline: `
+  },
+  {
+    key: '15',
+    lesson: 'Lesson 15',
+    unit: 'Pastoral letters: I AND II Timothy and Titus',
+    date: 'April 11, 2021',
+    topic: 'instruction for christian ministry',
+    mv:
+      'Take heed unto thyself, and unto the doctrine; continue in them: for in doing this thou shalt both save thyself, and them that hear thee',
+    verse: 'ITim. 4:16',
+    centralTruth:
+      'All Christians are called by God to Christlike, spirit-empowered ministry.',
+    lessonOutline: `
         1. Exemplify Christian Character ITim. 3:1-13.
           A. instructions for pastoral leaders.
           B. instructions for lay leaders.
@@ -296,15 +331,18 @@ export const data = {
           A. provide for your own.
           B. Deal justly with others.
       `,
-    },
-    Lesson16: {
-      Date: 'April 18, 2021',
-      Topic: 'Encouragement for faithfulness to christ',
-      Mv:
-        'Be strong in the grace that isin christ Jesus... Endure hardness, as a good soldier of Jesus christ.',
-      Verse: 'IITim. 2:1,3',
-      centralTruth: 'The scriptures command that we be faithful to christ.',
-      LessonOutline: `
+  },
+  {
+    key: '16',
+    lesson: 'Lesson 16',
+    unit: 'Pastoral letters: I AND II Timothy and Titus',
+    date: 'April 18, 2021',
+    topic: 'Encouragement for faithfulness to christ',
+    mv:
+      'Be strong in the grace that isin christ Jesus... Endure hardness, as a good soldier of Jesus christ.',
+    verse: 'IITim. 2:1,3',
+    centralTruth: 'The scriptures command that we be faithful to christ.',
+    lessonOutline: `
         1. Do not be ashamed IITim. 1:1-14.
           A. Do not be afraid.
           B. Hold on to the truth.
@@ -315,14 +353,17 @@ export const data = {
           A. Prepare to serve God.
           B. Be consecrated to God.
       `,
-    },
-    Lesson17: {
-      Date: 'April 25, 2021',
-      Topic: 'living in the last days',
-      Mv: 'this know also, that in the lastdays perilous times shall come .',
-      Verse: 'IITim. 3:1',
-      centralTruth: 'We are living in the last age before christ returns.',
-      LessonOutline: `
+  },
+  {
+    key: '17',
+    lesson: 'Lesson 17',
+    unit: 'Pastoral letters: I AND II Timothy and Titus',
+    date: 'April 25, 2021',
+    topic: 'living in the last days',
+    mv: 'this know also, that in the lastdays perilous times shall come .',
+    verse: 'IITim. 3:1',
+    centralTruth: 'We are living in the last age before christ returns.',
+    lessonOutline: `
         1. Living in dangerous times IITim. 3:1-3.
           A. Time of extreme sinfulness.
           B. Enduring Dificulties.
@@ -333,15 +374,18 @@ export const data = {
           A. Keep Your trust in christ.
           B. Be strengthened by christ.
       `,
-    },
-    Lesson18: {
-      Date: 'May 2, 2021',
-      Topic: 'Keep sound doctrine and practice',
-      Mv:
-        'In all things shewing thyself a pattern of good works: in doctrine shewing uncurrptness, gravity, sincerity.',
-      Verse: 'Tit. 2:7',
-      centralTruth: 'Our beliefs and lifestyle should honour christ.',
-      LessonOutline: `
+  },
+  {
+    key: '18',
+    lesson: 'Lesson 18',
+    unit: 'Pastoral letters: I AND II Timothy and Titus',
+    date: 'May 2, 2021',
+    topic: 'Keep sound doctrine and practice',
+    mv:
+      'In all things shewing thyself a pattern of good works: in doctrine shewing uncurrptness, gravity, sincerity.',
+    verse: 'Tit. 2:7',
+    centralTruth: 'Our beliefs and lifestyle should honour christ.',
+    lessonOutline: `
         1. Order in the church Tit. 1:1-9.
           A. Grace, Mercy, and Peace.
           B. Qualifications for spiritual leaders.
@@ -352,16 +396,19 @@ export const data = {
           A. Right Living Commanded.
           B. Engage in Right Living.
      `,
-    },
-    Lesson19: {
-      Date: 'May 9, 2021',
-      Topic: "live in God's grace",
-      Mv:
-        'Not by works of righteousness which we have done, but according to his [Gods] mercy he saved us, by the washing of regenration, and renewing of the Holy Ghost',
-      Verse: 'Tit. 3:5',
-      centralTruth:
-        'Trusting in christ, we are saved by grace and live by grace.',
-      LessonOutline: `
+  },
+  {
+    key: '19',
+    lesson: 'Lesson 19',
+    unit: 'Pastoral letters: I AND II Timothy and Titus',
+    date: 'May 9, 2021',
+    topic: "live in God's grace",
+    mv:
+      'Not by works of righteousness which we have done, but according to his [Gods] mercy he saved us, by the washing of regenration, and renewing of the Holy Ghost',
+    verse: 'Tit. 3:5',
+    centralTruth:
+      'Trusting in christ, we are saved by grace and live by grace.',
+    lessonOutline: `
         1. What grace teaches Tit. 2:11-15.
           A. Grace teaches Godliness.
           B. Our blessed hope.
@@ -372,18 +419,19 @@ export const data = {
           A. Avoid and reject evil.
           B. Practice hospitaity.
       `,
-    },
   },
-  Unit4: {
-    Title: 'Minor Prophets Part 2',
-    Lesson20: {
-      Date: 'May 16, 2021',
-      Topic: 'Judgement and promise (Obadiah and Nahum)',
-      Mv:
-        'The lord is slow to anger, and great in power, and will not at all acquit the wicked.',
-      Verse: 'Nah 1:3',
-      centralTruth: 'God judges evil, but He is merciful to those who seek him',
-      LessonOutline: `
+
+  {
+    key: '20',
+    lesson: 'Lesson 20',
+    unit: 'Minor Prophets Part 2',
+    date: 'May 16, 2021',
+    topic: 'Judgement and promise (Obadiah and Nahum)',
+    mv:
+      'The lord is slow to anger, and great in power, and will not at all acquit the wicked.',
+    verse: 'Nah 1:3',
+    centralTruth: 'God judges evil, but He is merciful to those who seek him',
+    lessonOutline: `
         1. God Judges the proud Obadiah 1-4, 10-21.
           A. The proud will be made small.
           B. Judgement and promise.
@@ -394,16 +442,19 @@ export const data = {
           A. A reason to hope.
           B. A Promise of restoration.
       `,
-    },
-    Lesson21: {
-      Date: 'May 23, 2021',
-      Topic: 'baptism in the holy spirit (PENTECOST)',
-      Mv:
-        'The promise is unto you, and to your children, and to all that are afar off, even as many as the Lord our God shall call.',
-      Verse: 'Acts 2:39',
-      centralTruth:
-        'God gave the holy spirit so every believer in Christ may be filled with the spirit',
-      LessonOutline: `
+  },
+  {
+    key: '21',
+    lesson: 'Lesson 21',
+    unit: 'Minor Prophets Part 2',
+    date: 'May 23, 2021',
+    topic: 'baptism in the holy spirit (PENTECOST)',
+    mv:
+      'The promise is unto you, and to your children, and to all that are afar off, even as many as the Lord our God shall call.',
+    verse: 'Acts 2:39',
+    centralTruth:
+      'God gave the holy spirit so every believer in Christ may be filled with the spirit',
+    lessonOutline: `
         1. baptism in the Holy spirit foretold Acts 1:4-8.
           A. The command to wait.
           B. The promised empowerment.
@@ -414,15 +465,17 @@ export const data = {
           A. Peter Proclaims.
           B. People Respond.
       `,
-    },
-    Lesson22: {
-      Date: 'May 30 2021',
-      Topic: 'Faith for troubled times (Habakkuk)',
-      Mv:
-        'Yet i will rejoice in the Lord, i will joy in the God of my salvation',
-      Verse: 'Hab. 3:18',
-      centralTruth: 'Faith in God enables us to persevere in troubled times.',
-      LessonOutline: `
+  },
+  {
+    key: '22',
+    lesson: 'Lesson 22',
+    unit: 'Minor Prophets Part 2',
+    date: 'May 30 2021',
+    topic: 'Faith for troubled times (Habakkuk)',
+    mv: 'Yet i will rejoice in the Lord, i will joy in the God of my salvation',
+    verse: 'Hab. 3:18',
+    centralTruth: 'Faith in God enables us to persevere in troubled times.',
+    lessonOutline: `
         1. Will God answer injustice? Hab. 1:1-11.
           A. Why Doesn't God Act?
           B. God's Answer Amazes.
@@ -433,16 +486,19 @@ export const data = {
           A. God shows himself faithful.
           B. Rejoice in every circumstance.
       `,
-    },
-    Lesson23: {
-      Date: 'June 6, 2021',
-      Topic: 'hope in the day of the lord (Zephaniah)',
-      Mv:
-        'The Lord thy God in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest his love, he will joy over thee with signing.',
-      Verse: 'Zeph. 3:17',
-      centralTruth:
-        'God will judge sin, but he has mercy on all who will call on him for salvation.',
-      LessonOutline: `
+  },
+  {
+    key: '23',
+    lesson: 'Lesson 23',
+    unit: 'Minor Prophets Part 2',
+    date: 'June 6, 2021',
+    topic: 'hope in the day of the lord (Zephaniah)',
+    mv:
+      'The Lord thy God in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest his love, he will joy over thee with signing.',
+    verse: 'Zeph. 3:17',
+    centralTruth:
+      'God will judge sin, but he has mercy on all who will call on him for salvation.',
+    lessonOutline: `
         1. DAy of God's wrath Zeph 1:1-18.
           A. Judah immersed in sin.
           B. The day of God is near.
@@ -453,15 +509,18 @@ export const data = {
           A. A call to the nations.
           B. Cause for rejoicing.
       `,
-    },
-    Lesson24: {
-      Date: 'June 13, 2021',
-      Topic: 'Put God first (Haggai)',
-      Mv: ' Thus saith the lord of hosts; Consider yours ways .',
-      Verse: 'Hagg. 1:7',
-      centralTruth:
-        "God's people must value their relationship with Him above all else.",
-      LessonOutline: `
+  },
+  {
+    key: '24',
+    lesson: 'Lesson 24',
+    unit: 'Minor Prophets Part 2',
+    date: 'June 13, 2021',
+    topic: 'Put God first (Haggai)',
+    mv: ' Thus saith the lord of hosts; Consider yours ways .',
+    verse: 'Hagg. 1:7',
+    centralTruth:
+      "God's people must value their relationship with Him above all else.",
+    lessonOutline: `
         1. Honour God first Hagg. 1:1-11.
           A. Make right priorities.
           B. Obey God.
@@ -472,16 +531,19 @@ export const data = {
           A. Disobedience Brings Consequences.
           B. Faithfulness Brings Reward.
       `,
-    },
-    Lesson25: {
-      Date: 'June 20, 2021',
-      Topic: "Preparing for God's presence (Zechariah)",
-      Mv:
-        'This is the word of the lord unto zerubbabel , saying, not by might , nor by power, but by my Spirit, saith the Lord of Host.',
-      Verse: 'Zech. 4:6',
-      centralTruth:
-        "Christians welcome God's. presence by forsaking sin, recieving spiritual cleansing, and walking in the spirit",
-      LessonOutline: `
+  },
+  {
+    key: '25',
+    lesson: 'Lesson 25',
+    unit: 'Minor Prophets Part 2',
+    date: 'June 20, 2021',
+    topic: "Preparing for God's presence (Zechariah)",
+    mv:
+      'This is the word of the lord unto zerubbabel , saying, not by might , nor by power, but by my Spirit, saith the Lord of Host.',
+    verse: 'Zech. 4:6',
+    centralTruth:
+      "Christians welcome God's. presence by forsaking sin, recieving spiritual cleansing, and walking in the spirit",
+    lessonOutline: `
         1. Cleansing Zech 3:1-10.
           A. Joshua Cleansed.
           B. Isreal called to be clean.
@@ -492,16 +554,19 @@ export const data = {
           A. Restored to Gods Favour.
           B. Many will come.
       `,
-    },
-    Lesson26: {
-      Date: 'June 27, 2021',
-      Topic: 'Live to Please God (Malachi)',
-      Mv:
-        'Unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall',
-      Verse: 'Mal. 4:2',
-      centralTruth:
-        'True Christianity is evidenced by a lifestyle of faithfulness, obedience, and reverence to God.',
-      LessonOutline: `
+  },
+  {
+    key: '26',
+    lesson: 'Lesson 26',
+    unit: 'Minor Prophets Part 2',
+    date: 'June 27, 2021',
+    topic: 'Live to Please God (Malachi)',
+    mv:
+      'Unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall',
+    verse: 'Mal. 4:2',
+    centralTruth:
+      'True Christianity is evidenced by a lifestyle of faithfulness, obedience, and reverence to God.',
+    lessonOutline: `
         1. Called to Faithfulness Mal. 2:1-17.
           A. Warnings of Unfaithfulness.
           B. A lifestyle of faithfulness.
@@ -512,6 +577,5 @@ export const data = {
           A. Judgement is Coming.
           B. Turn to God.
      `,
-    },
   },
-};
+];

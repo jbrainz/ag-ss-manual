@@ -12,6 +12,9 @@ import ForgotPassword from '../Auth/ForgotPassword';
 import Reset from '../Auth/Reset';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {AuthContext} from '../Auth/AuthProvider';
+import Profile from '../Main/Profile';
+import Settings from '../Main/Settings';
+import DrawerContent from '../Main/Drawer/Drawer';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -51,7 +54,7 @@ export const AuthNavigation = () => {
 };
 export const MainNavigation = () => {
   return (
-    <Drawer.Navigator initialRouteName="Home">
+    <Drawer.Navigator drawerContent={DrawerContent} initialRouteName="Home">
       <Drawer.Screen name="Home" component={HomeNavigation} />
     </Drawer.Navigator>
   );
@@ -75,9 +78,33 @@ const HomeNavigation = () => {
         name="Home"
         component={Home}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: '',
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({color}) => (
+            <MaterialCommunityIcons
+              name="book-outline"
+              color={color}
+              size={26}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({color}) => (
+            <MaterialCommunityIcons name="cog" color={color} size={26} />
           ),
         }}
       />

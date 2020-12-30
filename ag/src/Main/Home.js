@@ -1,18 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useContext} from 'react';
-import {
-  View,
-  Dimensions,
-  StyleSheet,
-  TextInput,
-  Image,
-  Text,
-} from 'react-native';
+import {View, Dimensions, StyleSheet, TextInput, Image} from 'react-native';
 import {AuthContext} from '../Auth/AuthProvider';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+import {useScrollHandler} from 'react-native-redash';
+
 import Lessons from './components/Lessons';
-import {RectButton} from 'react-native-gesture-handler';
+import {FlatList, RectButton} from 'react-native-gesture-handler';
 
 const background = require('../assets/img/sec.png');
 const {height, width} = Dimensions.get('window');
@@ -48,9 +43,9 @@ const Home = ({navigation}) => {
       <View
         style={{
           top: 0,
-          position: 'absolute',
+          position: 'relative',
           left: 0,
-          borderTopLeftRadius: 40,
+          bottom: 0,
         }}>
         <View style={styles.container}>
           <Image
@@ -106,22 +101,47 @@ const Home = ({navigation}) => {
                   elevation: 4,
                   opacity: 0.8,
                 }}
-                onPress={() => navigation.openDrawer()}>
+                onPress={() => {
+                  navigation.openDrawer();
+                }}>
                 <Icon name="bars" size={20} color="#fff" />
               </RectButton>
             </View>
           </View>
         </View>
-        <Lessons
-          date={data.Unit1.Lesson1.Date}
-          topic={data.Unit1.Lesson1.Topic}
-          memVerse={data.Unit1.Lesson1.Mv}
-          verse={data.Unit1.Lesson1.Verse}
-          centralTruth={data.Unit1.Lesson1.centralTruth}
-          outline={data.Unit1.Lesson1.LessonOutline}
-        />
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            position: 'relative',
+            top: 0,
+            left: 0,
+            height: '40%',
+          }}>
+          <FlatList
+            data={data}
+            renderItem={({item}) => (
+              <Lessons
+                key={item.key}
+                date={item.date}
+                topic={item.topic}
+                memVerse={item.mv}
+                centralTruth={item.centralTruth}
+                outline={item.lessonOutline}
+                verse={item.verse}
+                number={item.lesson}
+              />
+            )}
+          />
+        </View>
       </View>
-      {/* <RectButton
+    </View>
+  );
+};
+
+export default Home;
+{
+  /* <RectButton
         height={40}
         width={'60%'}
         backgroundColor="green"
@@ -131,9 +151,5 @@ const Home = ({navigation}) => {
           googleOut();
         }}>
         <Text color="white">Welcome</Text>
-      </RectButton> */}
-    </View>
-  );
-};
-
-export default Home;
+      </RectButton> */
+}
