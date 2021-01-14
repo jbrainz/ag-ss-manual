@@ -9,7 +9,7 @@ export const AuthProvider = ({children}) => {
   const [newErrors, setErrors] = useState('');
   const [er, setEr] = useState(false);
   const [loggedIn, setloggedIn] = useState(false);
-  const [userInfo, setuserInfo] = useState([]);
+  const [passedData, setData] = useState('');
   useEffect(() => {
     GoogleSignin.configure({
       scopes: ['email'], // what API you want to access on behalf of the user, default is email and profile
@@ -28,6 +28,7 @@ export const AuthProvider = ({children}) => {
         setEr,
         er,
         loggedIn,
+        passedData,
         login: async (email, password) => {
           try {
             await auth().signInWithEmailAndPassword(email, password);
@@ -132,6 +133,10 @@ export const AuthProvider = ({children}) => {
               console.log(err);
             }
           }
+        },
+        navigateData: (d) => {
+          setData(d);
+          console.log(d);
         },
         // facebook: async () => {
         //   try {

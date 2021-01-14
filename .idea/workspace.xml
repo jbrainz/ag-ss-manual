@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1386780-8d10-4f6a-9f43-1749e85d82fe" name="Default Changelist" comment="" />
+    <list default="true" id="c1386780-8d10-4f6a-9f43-1749e85d82fe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ag/src/Auth/AuthProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/ag/src/Auth/AuthProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ag/src/Main/Drawer/Drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/ag/src/Main/Drawer/Drawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ag/src/Main/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/ag/src/Main/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ag/src/Main/components/Lessons.js" beforeDir="false" afterPath="$PROJECT_DIR$/ag/src/Main/components/Lessons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ag/src/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/ag/src/data.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lxzYp6ufpZxaK0ET6yYtL2rvRP" />
   <component name="ProjectViewState">
@@ -30,5 +40,17 @@
       <updated>1608553584861</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="47" y="94" width="1224" height="586" key="AVDManager" timestamp="1609777302706">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="1432" y="97" width="1720" height="853" key="AVDManager/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1609770922369" />
+    <state x="47" y="94" width="1224" height="586" key="AVDManager/0.27.1366.741@0.27.1366.741" timestamp="1609777302706" />
+    <state x="1432" y="97" width="1720" height="853" key="AVDManager/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1609412163419" />
+    <state x="1815" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1609412162308">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1815" y="188" width="1022" height="737" key="SettingsEditor/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1609412162308" />
   </component>
 </project>

@@ -4,10 +4,8 @@ import {View, Dimensions, StyleSheet, TextInput, Image} from 'react-native';
 import {AuthContext} from '../Auth/AuthProvider';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import {useScrollHandler} from 'react-native-redash';
-
 import Lessons from './components/Lessons';
-import {FlatList, RectButton} from 'react-native-gesture-handler';
+import {RectButton} from 'react-native-gesture-handler';
 
 const background = require('../assets/img/sec.png');
 const {height, width} = Dimensions.get('window');
@@ -21,7 +19,6 @@ const styles = StyleSheet.create({
     height: wHeight * 0.8,
     width,
     elevation: 2,
-    borderBottomRightRadius: 50,
   },
   textInput: {
     height: 52,
@@ -38,6 +35,7 @@ const styles = StyleSheet.create({
 
 const Home = ({navigation}) => {
   const {logout, googleOut} = useContext(AuthContext);
+  const {passedData} = useContext(AuthContext);
   return (
     <View flex={1} justifyContent="center" alignItems="center">
       <View
@@ -55,7 +53,6 @@ const Home = ({navigation}) => {
               width: undefined,
               height: undefined,
               flex: 1,
-              borderBottomRightRadius: 50,
             }}
           />
           <View
@@ -80,7 +77,7 @@ const Home = ({navigation}) => {
                 autoCapitalize="none"
                 style={{width: '50%'}}
               />
-              <Icon name="microphone" size={19} color="#5855FE" />
+              <Icon name="microphone" size={19} color="#1982c4" />
             </View>
             <View
               style={{
@@ -94,7 +91,7 @@ const Home = ({navigation}) => {
                   borderWidth: 2,
                   height: 40,
                   width: 40,
-                  backgroundColor: '#5855FE',
+                  backgroundColor: '#1982c4',
                   justifyContent: 'center',
                   alignItems: 'center',
                   borderRadius: 20,
@@ -112,13 +109,25 @@ const Home = ({navigation}) => {
         <View
           style={{
             flex: 1,
-            justifyContent: 'center',
             position: 'relative',
-            top: 0,
-            left: 0,
-            height: '40%',
+            top: 5,
+            left: '1%',
           }}>
-          <FlatList
+          {data
+            .filter((d) => d.topic === passedData)
+            .map((filteredData) => (
+              <Lessons
+                key={filteredData.key}
+                date={filteredData.date}
+                topic={filteredData.topic}
+                memVerse={filteredData.mv}
+                centralTruth={filteredData.centralTruth}
+                outline={filteredData.lessonOutline}
+                verse={filteredData.verse}
+                number={filteredData.lesson}
+              />
+            ))}
+          {/* <FlatList
             data={data}
             renderItem={({item}) => (
               <Lessons
@@ -132,7 +141,7 @@ const Home = ({navigation}) => {
                 number={item.lesson}
               />
             )}
-          />
+          /> */}
         </View>
       </View>
     </View>
@@ -140,16 +149,3 @@ const Home = ({navigation}) => {
 };
 
 export default Home;
-{
-  /* <RectButton
-        height={40}
-        width={'60%'}
-        backgroundColor="green"
-        style={{marginTop: '80%'}}
-        onPress={() => {
-          logout();
-          googleOut();
-        }}>
-        <Text color="white">Welcome</Text>
-      </RectButton> */
-}

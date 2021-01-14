@@ -8,11 +8,15 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native';
+import DrawerItems from './DrawerItems';
 
 const {width} = Dimensions.get('window');
 export const DRAWER_WIDTH = width * 0.8;
 const aspectRatio = 600 / 600;
 const height = DRAWER_WIDTH * aspectRatio;
+import {data} from '../../data';
+import {ScrollView} from 'react-native-gesture-handler';
+
 const logo = require('../assets/img/agLogo.png');
 const DrawerContent = () => {
   return (
@@ -40,7 +44,6 @@ const DrawerContent = () => {
               style={{
                 fontSize: 18,
                 color: '#fff',
-
                 fontFamily: 'ContiSans-Bold',
                 textTransform: 'uppercase',
               }}>
@@ -49,7 +52,7 @@ const DrawerContent = () => {
           </View>
         </View>
       </View>
-      <View flex={1}>
+      <View flex={0.8}>
         <View flex={1} backgroundColor="#1982c4" />
         <View flex={1} backgroundColor="#1982c4" />
         <View
@@ -63,7 +66,7 @@ const DrawerContent = () => {
             borderBottomRightRadius: 75,
             backgroundColor: '#fff',
             justifyContent: 'center',
-            padding: 75,
+            padding: 25,
           }}>
           <View
             style={{
@@ -83,7 +86,13 @@ const DrawerContent = () => {
               }}
             />
           </View>
-          <Text>Unit</Text>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            style={{flex: 1, marginTop: 40}}>
+            {data.map(({topic, key, lesson}) => (
+              <DrawerItems key={key} number={lesson} label={topic} />
+            ))}
+          </ScrollView>
         </View>
       </View>
     </View>
