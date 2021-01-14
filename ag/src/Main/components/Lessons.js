@@ -13,23 +13,19 @@ const nHeight = height * 0.55;
 
 const styles = StyleSheet.create({
   container: {
-    width: '90%',
     backgroundColor: '#fff',
-    left: '5%',
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    elevation: 2,
+    borderTopLeftRadius: 20,
     overflow: 'hidden',
-    bottom: '10%',
-    marginTop: height / 4,
-    top: '-10%',
+    width: '98%',
   },
   row: {
     alignItems: 'center',
     width: '100%',
     backgroundColor: '#1982c4',
-    borderTopLeftRadius: 5,
-    borderBottomRightRadius: 75,
+    borderTopLeftRadius: 55,
+    borderBottomRightRadius: 55,
     borderTopRightRadius: 5,
     justifyContent: 'center',
   },
@@ -44,11 +40,11 @@ const styles = StyleSheet.create({
   },
   subText: {
     fontWeight: 'normal',
-    color: '#2C2C2C',
-    fontSize: 14,
+    color: '#000',
+    fontSize: 18,
     lineHeight: 18,
-    marginTop: '0.2%',
-    opacity: 0.8,
+    marginTop: 10,
+    opacity: 1,
     fontFamily: 'Conti-sans',
   },
 });
@@ -67,8 +63,8 @@ const Lessons = ({
   const NewView = read ? ScrollView : View;
   const insets = useSafeAreaInsets();
   return (
-    <View style={[styles.container, {height: read ? nHeight : wHeight}]}>
-      <View style={[styles.row, {height: read ? '20%' : '30%'}]}>
+    <View style={[styles.container]}>
+      <View style={[styles.row, {height: 100}]}>
         <Text
           style={[
             styles.text,
@@ -83,9 +79,9 @@ const Lessons = ({
           style={{
             backgroundColor: '#fff',
             borderTopLeftRadius: 75,
-            height: '100%',
+            height: '90%',
           }}>
-          <View style={{padding: '5%', marginBottom: 20}}>
+          <View style={{marginBottom: 10, marginTop: 30}}>
             <Text
               style={[
                 styles.subText,
@@ -105,7 +101,7 @@ const Lessons = ({
                 styles.subText,
                 {
                   textAlign: 'left',
-                  padding: 10,
+                  padding: 20,
                 },
               ]}>
               {memVerse}.
@@ -115,7 +111,7 @@ const Lessons = ({
                   {
                     fontWeight: 'bold',
                     color: '#d00000',
-                    fontSize: 12,
+                    fontSize: 16,
                     fontFamily: 'Retroica',
                     textTransform: 'uppercase',
                   },
@@ -134,6 +130,11 @@ const Lessons = ({
                     padding: 10,
                     borderWidth: 0.5,
                     borderColor: '#fdfffc',
+                    width: '60%',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flex: 1,
+                    left: '20%',
                   }}>
                   <Text
                     style={{
@@ -142,6 +143,7 @@ const Lessons = ({
                       color: '#6c757d',
                       marginBottom: 10,
                       fontFamily: 'ContiSans-Bold',
+                      fontSize: 18,
                     }}>
                     Central Truth:
                   </Text>
@@ -161,7 +163,7 @@ const Lessons = ({
                       style={{paddingRight: 10}}
                       name="quote-left"
                       color="#6c757d"
-                      size={10}
+                      size={14}
                     />
                     <Text
                       style={{
@@ -171,8 +173,8 @@ const Lessons = ({
                         marginBottom: '4%',
                         color: '#2C2C2C',
                         opacity: 0.6,
-                        fontSize: 12,
-                        fontFamily: 'ContiSans-Bold',
+                        fontSize: 18,
+                        fontFamily: 'ContiSans',
                       }}>
                       {' '}
                       {centralTruth}{' '}
@@ -186,14 +188,16 @@ const Lessons = ({
                       borderRadius: 10,
                       paddingLeft: 10,
                       paddingRight: 10,
+                      marginTop: 40,
+                      marginBottom: 20,
                     }}>
                     <Text
                       style={{
                         textAlign: 'center',
-                        fontWeight: 'bold',
                         color: '#6c757d',
                         marginBottom: 10,
                         fontFamily: 'ContiSans-Bold',
+                        fontSize: 18,
                       }}>
                       Lesson Outline:
                     </Text>
@@ -208,11 +212,11 @@ const Lessons = ({
                       style={{
                         color: '#2C2C2C',
                         opacity: 0.9,
-                        fontSize: 14,
+                        fontSize: 16,
                         fontFamily: 'Conti-sans',
                         textAlign: 'left',
                         fontWeight: 'normal',
-                        lineHeight: 18,
+                        lineHeight: 20,
                       }}>
                       {outline}
                     </Text>
