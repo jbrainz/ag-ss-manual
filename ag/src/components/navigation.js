@@ -84,30 +84,6 @@ const HomeNavigation = () => {
           ),
         }}
       />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons
-              name="book-outline"
-              color={color}
-              size={26}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Settings"
-        component={Settings}
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons name="cog" color={color} size={26} />
-          ),
-        }}
-      />
     </Tab.Navigator>
   );
 };

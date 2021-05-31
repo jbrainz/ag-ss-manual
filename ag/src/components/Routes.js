@@ -4,8 +4,8 @@ import auth from '@react-native-firebase/auth';
 import {AuthContext} from '../Auth/AuthProvider';
 import {AuthNavigation, MainNavigation} from './navigation';
 import Spinner from '../Auth/components/Spinner';
-const Stack = createStackNavigator();
 
+const Stack = createStackNavigator();
 const Routes = () => {
   const {user, setUser, loggedIn} = useContext(AuthContext);
   const [initializing, setInitializing] = useState(true);
