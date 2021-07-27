@@ -23,7 +23,7 @@
     "formik": "^2.2.6",
     "react": "16.13.1",
     "react-dom": "next",
-    "react-native": "0.63.4",
+    "react-native": "0.64.1",
     "react-native-gesture-handler": "~1.7.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.3",
     "react-native-reanimated": "^1.13.2",
