@@ -1,13 +1,13 @@
-import React, {useContext, useState, useEffect} from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import React, { useContext, useState, useEffect } from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
-import {AuthContext} from '../Auth/AuthProvider';
-import {AuthNavigation, MainNavigation} from './navigation';
+import { AuthContext } from '../Auth/AuthProvider';
+import { AuthNavigation, MainNavigation } from './navigation';
 import Spinner from '../Auth/components/Spinner';
 const Stack = createStackNavigator();
 
 const Routes = () => {
-  const {user, setUser, loggedIn} = useContext(AuthContext);
+  const { user, setUser, loggedIn } = useContext(AuthContext);
   const [initializing, setInitializing] = useState(true);
 
   const onAuthStateChanged = (users) => {
@@ -28,15 +28,9 @@ const Routes = () => {
 
   return (
     <>
-      {user || loggedIn ? (
-        <Stack.Navigator headerMode="none">
-          <Stack.Screen name="MainNavigation" component={MainNavigation} />
-        </Stack.Navigator>
-      ) : (
-        <Stack.Navigator headerMode="none">
-          <Stack.Screen name="AuthNavigation" component={AuthNavigation} />
-        </Stack.Navigator>
-      )}
+      <Stack.Navigator headerMode="none">
+        <Stack.Screen name="MainNavigation" component={MainNavigation} />
+      </Stack.Navigator>
     </>
   );
 };
