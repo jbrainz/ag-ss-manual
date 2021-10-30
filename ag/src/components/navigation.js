@@ -70,7 +70,7 @@ const HomeNavigation = () => {
   }
   return (
     <Tab.Navigator
-      initialRouteName={routeName}
+      initialRouteName="Home"
       tabBarOptions={{
         activeTintColor: '#2C2C2C',
       }}>
